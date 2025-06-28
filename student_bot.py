@@ -9,7 +9,7 @@ BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 # Đọc file Excel
 try:
-    df = pd.read_excel("data_hocsinh.xlsx.xlsx")
+    df = pd.read_excel("data_hocsinh.xlsx")
 except FileNotFoundError:
     df = None
 
