@@ -5,6 +5,16 @@ from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, Con
 import pandas as pd
 from datetime import datetime
 import os
+import telegram
+print("📦 Telegram Bot Library Version:", telegram.__version__)
+print("🔑 BOT_TOKEN =", os.getenv("BOT_TOKEN"))
+
+try:
+    df = pd.read_excel("data_hocsinh.xlsx")
+    print("✅ Đã đọc được file Excel.")
+except Exception as e:
+    print("❌ Lỗi khi đọc Excel:", e)
+    df = None
 
 # Lấy token từ biến môi trường
 BOT_TOKEN = os.getenv("BOT_TOKEN")
@@ -61,4 +71,5 @@ app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, search))
 
 print("🤖 Bot đang chạy...")
 app.run_polling()
+
 
