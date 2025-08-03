@@ -1,3 +1,5 @@
+import telegram
+print("📦 Telegram Bot Library Version:", telegram.__version__)
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, ContextTypes, filters
 import pandas as pd
@@ -59,3 +61,4 @@ app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, search))
 
 print("🤖 Bot đang chạy...")
 app.run_polling()
+
